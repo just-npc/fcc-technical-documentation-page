@@ -19,7 +19,7 @@
         <li><a href="">Introduction</a></li>
         <li><a href="">Pre-requisite before you learn</a></li>
         <li><a href="">TypeScript and JavaScript</a></li>
-        <li><a href="">Hello World</a></li>
+        <li><a href="">Do and Don'ts</a></li>
         <li><a href="">Variable</a></li>
       </ul>
     </nav>
@@ -46,18 +46,161 @@
       <section id="pre-requisite">
         <header>Pre-requisite before you learn TypeScript</header>
         <article>
-          <p>The answer is that you can’t learn TypeScript without learning JavaScript! TypeScript shares syntax and runtime behavior with JavaScript, so anything you learn about JavaScript is helping you learn TypeScript at the same time.</p>
-          <p>There are many, many resources available for programmers to learn JavaScript; you should not ignore these resources if you’re writing TypeScript. For example, there are about 20 times more StackOverflow questions tagged javascript than typescript, but all of the javascript questions also apply to TypeScript.</p>
-          <p>If you find yourself searching for something like “how to sort a list in TypeScript”, remember: TypeScript is JavaScript’s runtime with a compile-time type checker. The way you sort a list in TypeScript is the same way you do so in JavaScript. If you find a resource that uses TypeScript directly, that’s great too, but don’t limit yourself to thinking you need TypeScript-specific answers for everyday questions about how to accomplish runtime tasks.</p>
+          <p>
+            The answer is that you can’t learn TypeScript without learning
+            JavaScript! TypeScript shares syntax and runtime behavior with
+            JavaScript, so anything you learn about JavaScript is helping you
+            learn TypeScript at the same time.
+          </p>
+          <p>
+            There are many, many resources available for programmers to learn
+            JavaScript; you should not ignore these resources if you’re writing
+            TypeScript. For example, there are about 20 times more StackOverflow
+            questions tagged javascript than typescript, but all of the
+            javascript questions also apply to TypeScript.
+          </p>
+          <p>
+            If you find yourself searching for something like “how to sort a
+            list in TypeScript”, remember: TypeScript is JavaScript’s runtime
+            with a compile-time type checker. The way you sort a list in
+            TypeScript is the same way you do so in JavaScript. If you find a
+            resource that uses TypeScript directly, that’s great too, but don’t
+            limit yourself to thinking you need TypeScript-specific answers for
+            everyday questions about how to accomplish runtime tasks.
+          </p>
         </article>
       </section>
 
       <section id="TypeScript-and-JavaScript">
         <header>TypeScript And JavaScript</header>
+        <article>
+          <p>
+            as we discussed earlier, Typescript has features that are different
+            from JavaScript, these features are made to make it easier for
+            programmers to overcome errors that sometimes appear.
+          </p>
+          <p>here are some of these features:</p>
+
+          <ul>
+
+            <li>
+              <h3>Static Typing</h3>
+              <p>
+                TypeScript allows you to specify data types for variables,
+                function parameters, and return values. This helps catch errors
+                early, before the code runs.
+              </p>
+              <code
+                >let age: number = 25; // Error if age is assigned a non-numeric
+                value
+              </code>
+            </li>
+
+            <li>
+              <h3>Type Inference</h3>
+              <p>
+                TypeScript can automatically determine the data type based on
+                the assigned value, so you don’t always need to declare types
+                explicitly.
+              </p>
+              <code>
+                let name = "John"; // TypeScript infers that the type of 'name'
+                is string
+              </code>
+            </li>
+
+            <li>
+              <h3>Enhanced ES6+ Features</h3>
+              <p>TypeScript supports modern ECMAScript features (such as classes, arrow functions, and async/await) while providing backward compatibility with older JavaScript versions through transpiling.</p>
+            </li>
+
+            <li>
+              <h3>Interfaces and Generics</h3>
+              <p>TypeScript enables the creation of more flexible and reusable data structures using interfaces and generics.</p>
+              <code>
+                interface User {
+                id: number;
+                name: string;
+            }
+            
+            function getUser<T>(id: T): User {
+                // Function implementation
+            }
+            </code>
+            </li>
+
+            <li>
+              <h3>Safety and Scalability
+              </h3>
+              <p>By providing data types, TypeScript makes the code safer and easier to maintain in large projects. Errors like calling non-existent methods on objects or passing incorrect parameters can be prevented during development.</p>
+            </li>
+
+            <li>
+              <h3>Compatibility with JavaScript</h3>
+              <p>Since TypeScript is a superset of JavaScript, JavaScript code can be used directly without modification. Additionally, TypeScript is compiled (transpiled) into JavaScript to run in browsers or Node.js environments.</p>
+              <h3>Simple Example</h3>
+              <h5>JavaScript:</h5>
+              <code>
+                function add(a, b) {
+                return a + b;
+                }
+              </code>
+              <h5>TypeScript:</h5>
+              <code>
+                function add(a: number, b: number): number {
+                  return a + b;
+                }              
+              </code>
+            </li>
+          </ul>
+
+          <h3 class="conclusion">Conclusion</h3>
+          <p>TypeScript helps developers write clearer, safer, and more maintainable code by offering additional features such as static typing, interfaces, and support for ES6+.</p>
+        </article>
+      </section>
+
+      <section id="do-and-dont">
+        <header>Do and Don'ts</header>
+        
+        <article class="tips">
+          <span>
+            <h3>General Types</h>
+            <h4>Number
+              , 
+              String
+              , 
+              Boolean
+              , 
+              Symbol
+              and 
+              Object</h4>
+              <p>❌ Don’t ever use the types Number, String, Boolean, Symbol, or Object These types refer to non-primitive boxed objects that are almost never used appropriately in JavaScript code.</p>
+              <code>
+                function reverse(s: String): String;
+                /* WRONG */
+              </code>
+
+              <h4>✅ Do use the types number, string, boolean, and symbol.</h4>
+              <code>
+                function reverse(s: string): string; /* OK */
+              </code>
+              <p>Instead of Object, use the non-primitive object type(<a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-type"></a>).</p>
+            </span>
+
+          <span>
+            <h3>Generics</h3>
+            <p>❌ Don’t ever have a generic type which doesn’t use its type parameter. See more details in <a href="https://github.com/Microsoft/TypeScript/wiki/FAQ#why-doesnt-type-inference-work-on-this-interface-interface-foot--"> TypeScript FAQ page</a></p>
+          </span>
+
+          <span>
+            <h3>Any</h3>
+            <p>❌ Don’t use any as a type unless you are in the process of migrating a JavaScript project to TypeScript. The compiler effectively treats any as “please turn off type checking for this thing”. It is similar to putting an @ts-ignore comment around every usage of the variable. This can be very helpful when you are first migrating a JavaScript project to TypeScript as you can set the type for stuff you haven’t migrated yet as any, but in a full TypeScript project you are disabling type checking for any parts of your program that use it.</p>
+            <p>t in a full TypeScript project you are disabling type checking for any parts of your program that use it.
+
+              In cases where you don’t know what type you want to accept, or when you want to accept anything because you will be blindly passing it through without interacting with it, you can use <a href="https://www.typescriptlang.org/play/#example/unknown-and-never">unknown-and-never/a></p>
+          </span>wn
+        </article>
       </section>
     </main>
-    <!-- <h1>Hello world</h1>
-    <h3>type: <span style="color: aqua">any</span> = any</h3>
-    <h2>lmaoo bat</h2> -->
   </body>
 </html>

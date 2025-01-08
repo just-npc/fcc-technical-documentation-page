@@ -11,17 +11,15 @@ body {
 }
 
 nav#navbar {
-  border: 3px solid #074799;
-  width: 50rem;
+  position: fixed;
+  min-width: 290px;
+  top: 0;
+  left: 0;
+  border-right: solid;
+  width: 300px;
   height: 100%;
   text-align: center;
   height: 100vh;
-  /* flex-shrink: 1; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-content: stretch; */
-  /* align-items: stretch; */
-  /* justify-content: stretch; */
 }
 
 nav#navbar > header {
@@ -31,7 +29,7 @@ nav#navbar > header {
   font-weight: bold;
   /* margin: 0 auto; */
   padding: 10px;
-  border-bottom: 1px solid #074799;
+  /* border-bottom: 1px solid #074799; */
 }
 
 nav#navbar ul > li {
@@ -52,6 +50,10 @@ nav#navbar a {
 main#main-doc {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
 }
 
 main#main-doc > section {
@@ -69,4 +71,44 @@ section > article {
 
 article > p {
   margin-bottom: 10px;
+}
+
+li > p {
+  margin: 10px 0;
+}
+
+li > code {
+  display: block;
+  padding: 15px;
+  margin: 10px;
+  line-height: 2;
+  border-radius: 5px;
+  font-family: monospace;
+  color: #000;
+  background-color: #abadba;
+}
+
+h3.conclusion {
+  margin-top: 20px;
+}
+
+article.tips {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+article.tips > span {
+  gap: 1rem;
+}
+
+article.tips > span > code {
+  display: block;
+  padding: 15px;
+  margin: 10px;
+  line-height: 2;
+  border-radius: 5px;
+  font-family: monospace;
+  color: #000;
+  background-color: #abadba;
 }

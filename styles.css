@@ -28,8 +28,8 @@ nav#navbar > header {
   font-size: 1.6rem;
   font-weight: bold;
   /* margin: 0 auto; */
-  padding: 10px;
-  /* border-bottom: 1px solid #074799; */
+  padding: 15px;
+  border-bottom: 3px solid #000;
 }
 
 nav#navbar ul > li {

@@ -16,11 +16,11 @@
     <nav id="navbar">
       <header>TS Documentation</header>
       <ul>
-        <li><a href="">Introduction</a></li>
-        <li><a href="">Pre-requisite before you learn</a></li>
-        <li><a href="">TypeScript and JavaScript</a></li>
-        <li><a href="">Do and Don'ts</a></li>
-        <li><a href="">Variable</a></li>
+        <li><a class="nav-link" href="#introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#pre-requisite">Pre-requisite before you learn</a></li>
+        <li><a class="nav-link" href="#typesscipt-and-javascript">TypeScript and JavaScript</a></li>
+        <li><a class="nav-link" href="#do-and-dont">Do and Don'ts</a></li>
+        <li><a class="nav-link" href="">Variable</a></li>
       </ul>
     </nav>
 
@@ -71,7 +71,7 @@
         </article>
       </section>
 
-      <section id="TypeScript-and-JavaScript">
+      <section id="typescript-and-javascript">
         <header>TypeScript And JavaScript</header>
         <article>
           <p>
@@ -195,10 +195,102 @@
           <span>
             <h3>Any</h3>
             <p>❌ Don’t use any as a type unless you are in the process of migrating a JavaScript project to TypeScript. The compiler effectively treats any as “please turn off type checking for this thing”. It is similar to putting an @ts-ignore comment around every usage of the variable. This can be very helpful when you are first migrating a JavaScript project to TypeScript as you can set the type for stuff you haven’t migrated yet as any, but in a full TypeScript project you are disabling type checking for any parts of your program that use it.</p>
-            <p>t in a full TypeScript project you are disabling type checking for any parts of your program that use it.
+            <br/>
+            <p>t in a full TypeScript project you are disabling type checking for any parts of your program that use it.In cases where you don’t know what type you want to accept, or when you want to accept anything because you will be blindly passing it through without interacting with it, you can use <a href="https://www.typescriptlang.org/play/#example/unknown-and-never">unknown-and-never</a>
 
-              In cases where you don’t know what type you want to accept, or when you want to accept anything because you will be blindly passing it through without interacting with it, you can use <a href="https://www.typescriptlang.org/play/#example/unknown-and-never">unknown-and-never/a></p>
-          </span>wn
+              </p>
+          </span>
+        </article>
+      </section>
+
+      <section id="conclusion">
+        <header>Conclusion</header>
+
+        <article>
+          <p>TypeScript provides several advantages that make it a preferred choice for many developers, especially for large and complex projects. Here’s a summary of why using TypeScript can be beneficial:
+          </p>
+
+          <ol>
+            
+            <li>
+              <h3>Improved Code Quality and Maintainability</h3>
+            </li>
+            <ul>
+              <li> 
+                <p>It provides clearer documentation through type annotations, making the code easier to understand and maintain, even for new developers joining the project.
+                </li>
+                <li>
+                <p>By enforcing static typing, TypeScript helps catch errors at compile time rather than at runtime, making the codebase more reliable.</p></li>
+            </ul>
+
+            <li>
+              <h3>Enhanced Developer Experience</h3>
+            </li>
+            <ul>
+              <li>
+                <p>TypeScript offers powerful autocompletion, intelligent code navigation, and refactoring tools in modern IDEs, which significantly boost productivity.</p>
+              </li>
+              <li>
+                <p>Errors and warnings are shown directly in the editor, allowing developers to fix issues immediately.</p>
+              </li>
+            </ul>
+
+
+            <li>
+              <h3>Scalability for Large Projects</h3>
+            </li>
+            <ul>
+            <li>
+              <p>In large codebases, managing data flow and module dependencies can become challenging. TypeScript’s strong type system helps ensure consistency and prevents common mistakes, like passing incorrect data types.</p>
+            </li>
+              <li><p>It also supports advanced features like interfaces, generics, and type unions, which help build scalable and reusable components.</p></li>
+            </ul>
+
+            <li>
+              <h3>Backward Compatibility with JavaScript</h3>
+            </li>
+
+            <ul>
+              <li>
+                  <p>Since TypeScript is a superset of JavaScript, it can be adopted incrementally in existing projects without requiring a complete rewrite.</p>
+              </li>
+              <li>
+                  <p>The ability to compile to plain JavaScript ensures compatibility with any JavaScript runtime environment.
+                  </p>
+              </li>
+            </ul>
+
+
+            <li>
+              <h3>Early Error Detection</h3>
+            </li>
+
+            <ul>
+              <li>
+                <p>TypeScript detects potential bugs and inconsistencies at compile time, reducing runtime errors and improving overall application stability.</p>
+              </li> 
+            </ul>
+          </ol>
+
+          <h3 class="reason-title">Why Choose TypeScript Over Plain JavaScript?</h3>
+            
+            <ul class="reason">
+              <li>
+                <p>Type Safety: Prevents type-related errors and improves code reliability.</p>
+              </li>
+              <li>
+                <p>Maintainability: Makes the code easier to refactor and extend.</p>
+              </li>
+              <li>
+                <p>Team Collaboration: Clearer code with type annotations helps teams work more efficiently.
+                </p>
+              </li>
+              <li>
+                <p>Tooling Support: Rich integration with IDEs like Visual Studio Code provides a smoother development experience.</p>
+              </li>
+            </ul>
+
+            <p>In conclusion, adopting TypeScript is a strategic choice for developers seeking to create robust, scalable, and maintainable applications. It reduces bugs, improves productivity, and ensures a smoother development process, making it a valuable addition to modern software development.</p>
         </article>
       </section>
     </main>
